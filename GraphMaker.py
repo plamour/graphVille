@@ -9,7 +9,7 @@ def addNode(listVille):
 
         :param listVille: liste des villes.
         """
-    nomVille = input("\nNom de la ville : ")
+    nomVille = input("Nom de la ville : ")
     listVille.append(nomVille)
 
 
@@ -24,7 +24,13 @@ def addArc(listVille,listeRoute):
     for i in range(len(listVille)):
         option += "\n"+str(i+1)+") " +listVille[i]
     option += "\n"
-    node1 = listVille[int(input("ville 1 : " + option))-1]
+    tmp = input("ville 1 : " + option)
+    node1 = listVille[int(tmp)-1]
+    option = ""
+    for i in range(len(listVille)):
+        if  i != int(tmp)-1:
+            option += "\n"+str(i+1)+") " +listVille[i]
+
     node2 = listVille[int(input("ville 2 : " + option))-1]
     while node1 == node2:
         node2 = listVille[int(input("Ne pas choisir la même ville que la ville 1 : " + option)) - 1]
@@ -45,7 +51,7 @@ def createJson(listVille,listRoute):
         """
     listes = { "nodes": listVille, "edges": listRoute }
     jsName = input("Nom du fichier .json ?\n")
-    with open(jsName+".json", "w") as f:
+    with open("json/"+jsName+".json", "w") as f:
         json.dump(listes, f, indent=4)
 
 def main():
@@ -65,7 +71,8 @@ def main():
         if opt == 1:
             addNode(listVille)
         elif opt == 2:
-            addArc(listVille,listRoute)
+            if len(listVille) > 1:
+                addArc(listVille, listRoute)
     createJson(listVille,listRoute)
 
 if __name__ == "__main__": main()
