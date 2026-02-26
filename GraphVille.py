@@ -27,14 +27,18 @@ def getGraph():
 
 
 def main():
-    # Assume you already have G = getGraph()
     G = getGraph()  # your MultiGraph
 
     plt.figure(figsize=(25, 18))
     pos = nx.kamada_kawai_layout(G)
-    # Draw nodes
+
     nx.draw_networkx_nodes(G, pos, node_size=800, node_color="skyblue")
     nx.draw_networkx_labels(G, pos, font_size=12, font_weight='bold')
+
+    nx.draw_networkx_edges(G, pos, width=2, alpha=0.7)
+
+    edge_labels = nx.get_edge_attributes(G, 'id')
+    nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_color='red', font_size=10)
 
     plt.axis("off")
     plt.tight_layout()
