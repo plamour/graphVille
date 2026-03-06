@@ -35,6 +35,10 @@ Vous pouvez installer les bibliothèques nécessaires avec la commande suivante 
 ```bash
 pip install matplotlib networkx
 ```
+### Documentation Python
+
+Pour plus de détails sur les fonctions et le code source, consulter la documentation Python du projet :  
+[Documentation Graph Ville](https://plamour.github.io/graphVille/graphVille.html#GraphVille.main)
 
 ---
 
