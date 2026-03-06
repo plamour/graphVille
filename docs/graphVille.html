@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="fr" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Graph Ville Module &#8212; Documentation GraphVille </title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=d1a510d7"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/translations.js?v=e6b791cb"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="prev" title="Graph Module" href="graphMaker.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="graph-ville-module">
+<h1>Graph Ville Module<a class="headerlink" href="#graph-ville-module" title="Lien vers cette rubrique">¶</a></h1>
+<dl class="py function" id="module-GraphVille">
+<dt class="sig sig-object py" id="GraphVille.Djikstra">
+<span class="sig-prename descclassname"><span class="pre">GraphVille.</span></span><span class="sig-name descname"><span class="pre">Djikstra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">G</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#GraphVille.Djikstra" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Applique l’algorithme de Dijkstra sur un graphe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> – graphe NetworkX.</p></li>
+<li><p><strong>start</strong> – noeud de départ.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>graphe avec les poids minimum et les prédécesseurs calculés.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="GraphVille.drawGraph">
+<span class="sig-prename descclassname"><span class="pre">GraphVille.</span></span><span class="sig-name descname"><span class="pre">drawGraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">G</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#GraphVille.drawGraph" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Affiche le graphe et met en évidence le chemin trouvé.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> – graphe NetworkX.</p></li>
+<li><p><strong>path</strong> – liste représentant le chemin calculé.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="GraphVille.getGraph">
+<span class="sig-prename descclassname"><span class="pre">GraphVille.</span></span><span class="sig-name descname"><span class="pre">getGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GraphVille.getGraph" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Construit un graphe NetworkX à partir d’un fichier JSON.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>graphe MultiGraph contenant les villes et les routes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="GraphVille.jsonToGraph">
+<span class="sig-prename descclassname"><span class="pre">GraphVille.</span></span><span class="sig-name descname"><span class="pre">jsonToGraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jsName</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#GraphVille.jsonToGraph" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Charge un graphe depuis un fichier JSON.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>jsName</strong> – nom du fichier JSON (sans l’extension).</p>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>dictionnaire contenant les listes de noeuds et d’arêtes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="GraphVille.main">
+<span class="sig-prename descclassname"><span class="pre">GraphVille.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GraphVille.main" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Menu interactif permettant de calculer un chemin entre plusieurs villes.</p>
+<p>L’utilisateur choisit :
+- un fichier JSON contenant le graphe
+- une ville de départ
+- une ou plusieurs villes cibles</p>
+<p>Le programme calcule ensuite le chemin le plus court et affiche le graphe.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="GraphVille.multi_target_path">
+<span class="sig-prename descclassname"><span class="pre">GraphVille.</span></span><span class="sig-name descname"><span class="pre">multi_target_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">G</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targets</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#GraphVille.multi_target_path" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Calcule un chemin passant par plusieurs villes cibles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> – graphe NetworkX.</p></li>
+<li><p><strong>source</strong> – ville de départ.</p></li>
+<li><p><strong>targets</strong> – liste des villes à visiter dans l’ordre.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>liste représentant le chemin complet.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">GraphVille</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="graphMaker.html">Graph Module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Graph Ville Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#GraphVille.Djikstra"><code class="docutils literal notranslate"><span class="pre">Djikstra()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#GraphVille.drawGraph"><code class="docutils literal notranslate"><span class="pre">drawGraph()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#GraphVille.getGraph"><code class="docutils literal notranslate"><span class="pre">getGraph()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#GraphVille.jsonToGraph"><code class="docutils literal notranslate"><span class="pre">jsonToGraph()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#GraphVille.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#GraphVille.multi_target_path"><code class="docutils literal notranslate"><span class="pre">multi_target_path()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="graphMaker.html" title="Chapitre précédent">Graph Module</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Pierre Lamour.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/graphVille.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

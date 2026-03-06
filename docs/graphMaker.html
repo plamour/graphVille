@@ -15,6 +15,7 @@
     <script src="_static/translations.js?v=e6b791cb"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Graph Ville Module" href="graphVille.html" />
     <link rel="prev" title="GraphVille documentation" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -38,12 +39,15 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="GraphMaker.addArc">
 <span class="sig-prename descclassname"><span class="pre">GraphMaker.</span></span><span class="sig-name descname"><span class="pre">addArc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">listVille</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">listeRoute</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#GraphMaker.addArc" title="Lien vers cette définition">¶</a></dt>
-<dd><p>Rajoute des routes à la liste interactivement.</p>
+<dd><p>Ajoute une route entre deux villes existantes.</p>
+<p>L’utilisateur sélectionne deux villes dans la liste et indique
+la distance (en kilomètres) entre celles-ci. La route est ensuite
+ajoutée à la liste des arêtes du graphe.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>listVille</strong> – liste des villes.</p></li>
-<li><p><strong>listeRoute</strong> – liste des Routes.</p></li>
+<li><p><strong>listVille</strong> – liste des villes disponibles.</p></li>
+<li><p><strong>listeRoute</strong> – liste des routes du graphe.</p></li>
 </ul>
 </dd>
 </dl>
@@ -52,10 +56,12 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="GraphMaker.addNode">
 <span class="sig-prename descclassname"><span class="pre">GraphMaker.</span></span><span class="sig-name descname"><span class="pre">addNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">listVille</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#GraphMaker.addNode" title="Lien vers cette définition">¶</a></dt>
-<dd><p>Rajoute des Ville à la liste interactivement.</p>
+<dd><p>Ajoute une ville à la liste des villes via une saisie utilisateur.</p>
+<p>L’utilisateur saisit le nom d’une ville qui est ensuite ajouté
+à la liste des villes du graphe.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>listVille</strong> – liste des villes.</p>
+<dd class="field-odd"><p><strong>listVille</strong> – liste contenant les villes du graphe.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -63,12 +69,15 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="GraphMaker.createJson">
 <span class="sig-prename descclassname"><span class="pre">GraphMaker.</span></span><span class="sig-name descname"><span class="pre">createJson</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">listVille</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">listRoute</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#GraphMaker.createJson" title="Lien vers cette définition">¶</a></dt>
-<dd><p>Crée le fichier JSON avec les listes.</p>
+<dd><p>Génère un fichier JSON contenant les données du graphe.</p>
+<p>Le fichier JSON contient :
+- la liste des villes (nodes)
+- la liste des routes avec leurs distances (edges)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>listVille</strong> – liste des ville.</p></li>
-<li><p><strong>listeRoute</strong> – liste des Route.</p></li>
+<li><p><strong>listVille</strong> – liste des villes.</p></li>
+<li><p><strong>listeRoute</strong> – liste des routes reliant les villes.</p></li>
 </ul>
 </dd>
 </dl>
@@ -77,15 +86,15 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="GraphMaker.main">
 <span class="sig-prename descclassname"><span class="pre">GraphMaker.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GraphMaker.main" title="Lien vers cette définition">¶</a></dt>
-<dd><p>Menu de sélection des option pour la création du JSON.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>listVille</strong> – liste des ville.</p></li>
-<li><p><strong>listeRoute</strong> – liste des Route.</p></li>
-</ul>
-</dd>
-</dl>
+<dd><p>Programme principal permettant de créer ou modifier un fichier JSON
+représentant un graphe de villes et de routes.</p>
+<p>Au lancement, l’utilisateur peut :
+- créer un nouveau fichier JSON
+- charger un fichier JSON existant</p>
+<p>Une fois le graphe chargé ou créé, un menu interactif permet :
+- d’ajouter des villes
+- d’ajouter des routes entre les villes
+- de générer le fichier JSON final.</p>
 </dd></dl>
 
 </section>
@@ -125,6 +134,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#GraphMaker.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="graphVille.html">Graph Ville Module</a></li>
 </ul>
 
 <div class="relations">
@@ -132,6 +142,7 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="index.html" title="Chapitre précédent">GraphVille documentation</a></li>
+      <li>Next: <a href="graphVille.html" title="Chapitre suivant">Graph Ville Module</a></li>
   </ul></li>
 </ul>
 </div>
